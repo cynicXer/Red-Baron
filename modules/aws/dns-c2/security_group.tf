@@ -19,7 +19,8 @@ resource "aws_security_group" "dns-c2" {
     cidr_blocks = ["${linode_linode.dns-rdir.ip_address}/32",
                    "${var.my_ip}/32"]
     */
-    cidr_blocks = ["${data.external.get_public_ip.result["ip"]}/32"]
+    cidr_blocks = ["0.0.0.0/0"]  
+    //cidr_blocks = ["${data.external.get_public_ip.result["ip"]}/32"]
   }
   ingress {
     from_port = 53
