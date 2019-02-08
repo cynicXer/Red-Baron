@@ -2,6 +2,8 @@ variable "domain" {}
 
 variable "type" {}
 
+variable "name" {}
+
 variable "count" {
   default = 1
 }
