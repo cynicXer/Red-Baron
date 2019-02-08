@@ -7,6 +7,7 @@ resource "digitalocean_record" "record" {
   count  = "${var.count}"
   domain = "${element(keys(var.records), count.index)}"
   type   = "${var.type}"
+  name   = "${var.name}"
   value  = "${lookup(var.records, element(keys(var.records), count.index))}"
   ttl    = "${var.ttl}"
 }
